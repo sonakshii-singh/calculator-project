@@ -20,3 +20,36 @@ function calculate(){
         display.value = "Error";
     }
 }
+
+
+document.addEventListener("keydown", function(event){
+
+    const key = event.key;
+
+    // Numbers and operators
+    if(
+        (key >= "0" && key <= "9") ||
+        key === "+" ||
+        key === "-" ||
+        key === "*" ||
+        key === "/" ||
+        key === "."
+    ){
+        append(key);
+    }
+
+    // Enter key
+    else if(key === "Enter"){
+        calculate();
+    }
+
+    // Backspace key
+    else if(key === "Backspace"){
+        deleteLast();
+    }
+
+    // Escape key
+    else if(key === "Escape"){
+        clearDisplay();
+    }
+});
